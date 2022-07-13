@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Introdução à Razor";
+}
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="col">
+            <h1 class="h1">Todo List</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input 
+                class="form-control form-control-lg" 
+                type="text" 
+                placeholder="Add Task..." 
+                aria-label="Add Task..."
+            />
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-lg btn-primary">
+                +
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h2 class="h5 my-4">My tasks</h2>
+        </div>
+    </div>
+    <ul class="list-group">
+
+        @{
+            string[] Todos = { "First checkbox", "Second checkbox", "Third checkbox" , "Fourth checkbox", " Fifth checkbox"};
+
+            @foreach (string Todo in Todos)
+            {
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-auto">
+                            <input 
+                                class="form-check-input me-2" 
+                                type="checkbox" 
+                            >
+                        </div>
+                        <div class="col">
+                            @Todo
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-sm btn-danger">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div>  
+
